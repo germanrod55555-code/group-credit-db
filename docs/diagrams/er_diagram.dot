@@ -1,0 +1,30 @@
+digraph ER {
+graph [rankdir=LR,bgcolor="white",pad=0.3,nodesep=0.4,ranksep=1.1];
+node [shape=box,fontname="Arial",fontsize=13,style="rounded,filled",fillcolor="#eef3f7",color="#37546a"];
+edge [fontname="Arial",fontsize=11,color="#708090",arrowhead=crow,arrowtail=tee,dir=both];
+"audit.audit_log" [label="audit.audit_log\nPK audit_id: bigint\nevent_at: timestamptz\nsession_actor: text\neffective_role: text\ntable_name: text\noperation: text\nold_data: jsonb\nnew_data: jsonb\ntxid: bigint"];
+"credit.borrower" [label="credit.borrower\nPK borrower_id: bigint\ncase_code: text\nFK region_code: text\nFK industry_code: text\nsynthetic: boolean"];
+"credit.industry" [label="credit.industry\nPK code: text\ndescription: text"];
+"credit.lender" [label="credit.lender\nPK lender_id: bigint\nname: text"];
+"credit.load_run" [label="credit.load_run\nPK run_id: bigint\nstarted_at: timestamptz\nfinished_at: timestamptz\nstatus: text\nrow_count: bigint"];
+"credit.loan_contract" [label="credit.loan_contract\nPK loan_id: bigint\nFK borrower_id: bigint\nFK lender_id: bigint\nFK source_id: smallint\nsource_row: bigint\napproval_date: date\namount: numeric\noutstanding: numeric\nterm_months: integer\nFK status_code: text\nscenario_fields: boolean"];
+"credit.loan_status" [label="credit.loan_status\nPK status_code: text"];
+"credit.region" [label="credit.region\nPK code: text"];
+"credit.source_file" [label="credit.source_file\nPK source_id: smallint\nfilename: text\nurl: text\nsha256: character\nrow_count: bigint\nloaded_at: timestamptz"];
+"private.collateral" [label="private.collateral\nPK collateral_id: bigint\nkind: text\nappraised_value: numeric\nsynthetic: boolean"];
+"private.financial_report" [label="private.financial_report\nPK report_id: bigint\nFK borrower_id: bigint\nfiscal_year: smallint\nrevenue: numeric\nnet_profit: numeric\nsynthetic: boolean"];
+"private.guarantee" [label="private.guarantee\nPK loan_id: bigint\nPK guarantor_id: bigint\namount: numeric"];
+"private.guarantor" [label="private.guarantor\nPK guarantor_id: bigint\ndisplay_name: text\ncontact_email: text\nsynthetic: boolean"];
+"private.loan_collateral" [label="private.loan_collateral\nPK loan_id: bigint\nPK collateral_id: bigint\nallocated_value: numeric"];
+"credit.industry" -> "credit.borrower" [label="1 : 0..N"];
+"credit.region" -> "credit.borrower" [label="1 : 0..N"];
+"credit.borrower" -> "credit.loan_contract" [label="1 : 0..N"];
+"credit.lender" -> "credit.loan_contract" [label="1 : 0..N"];
+"credit.loan_status" -> "credit.loan_contract" [label="1 : 0..N"];
+"credit.source_file" -> "credit.loan_contract" [label="1 : 0..N"];
+"credit.borrower" -> "private.financial_report" [label="1 : 0..N"];
+"credit.loan_contract" -> "private.guarantee" [label="1 : 0..N"];
+"private.guarantor" -> "private.guarantee" [label="1 : 0..N"];
+"credit.loan_contract" -> "private.loan_collateral" [label="1 : 0..N"];
+"private.collateral" -> "private.loan_collateral" [arrowhead=tee,label="1 : 0..1"];
+}

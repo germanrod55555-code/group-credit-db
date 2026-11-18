@@ -1,0 +1,21 @@
+digraph Flow {
+ graph [rankdir=LR,bgcolor="white",nodesep=0.5,ranksep=0.8];
+ node [shape=box,style="rounded,filled",fillcolor="#eef3f7",fontname="Arial",fontsize=15];
+ edge [color="#37546a",fontname="Arial",fontsize=12];
+ source [label="SBA CSV
+1 236 084 записи"];
+ stage [label="COPY → staging
+хеш, типы, ключи"];
+ model [label="14 таблиц
+FK / CHECK / UNIQUE"];
+ mart [label="VIEW и MV
+учебный риск"];
+ export [label="Python / pandas
+порции → CSV"];
+ ops [label="Оператор
+изменения"];
+ audit [label="Триггеры
+лимит + аудит"];
+ source -> stage -> model -> mart -> export;
+ ops -> audit -> model;
+}
