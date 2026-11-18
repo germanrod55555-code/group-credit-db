@@ -1,0 +1,18 @@
+[
+  {
+    "source_id": 1,
+    "filename": "FOIA_7a_FY2000_FY2009_asof_260930.csv",
+    "url": "https://data.sba.gov/sites/default/files/uploaded_resources/FOIA_7a_FY2000_FY2009_asof_260930.csv",
+    "sha256": "e0122bce7e468fc1c4bb6f0a24100bfa0ead8c6065332a2b28cb01671ba5273e",
+    "row_count": 690333,
+    "bytes": 318696252
+  },
+  {
+    "source_id": 2,
+    "filename": "FOIA_7a_FY2010_FY2019_asof_260930.csv",
+    "url": "https://data.sba.gov/sites/default/files/uploaded_resources/FOIA_7a_FY2010_FY2019_asof_260930.csv",
+    "sha256": "39aa32b71fb5dbb4bfb178c9b3d597c92bb6903622027c2f8360d13e57d0abb2",
+    "row_count": 545751,
+    "bytes": 255300948
+  }
+]

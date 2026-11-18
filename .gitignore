@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw/
+data/*.csv
+data/*.part
+backups/
+*.dump
+pgdata/
+results/local_*

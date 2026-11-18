@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16.13
+    environment:
+      POSTGRES_DB: credit_lab
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:55438:5432"
+    command: ["postgres", "-c", "shared_preload_libraries=pg_stat_statements", "-c", "track_io_timing=on"]
+    volumes:
+      - credit_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d credit_lab"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  credit_data:
