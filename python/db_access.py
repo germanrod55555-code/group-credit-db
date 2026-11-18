@@ -36,6 +36,7 @@ def quality(con):
     result['limit_violations']=con.execute('''SELECT count(*) n FROM credit.loan_contract l JOIN private.financial_report f
       ON f.borrower_id=l.borrower_id AND f.fiscal_year=extract(year from l.approval_date)::int-1 WHERE l.amount>f.revenue*0.5''').fetchone()['n']
     result['optional_missing_terms']=con.execute('SELECT count(*) n FROM credit.loan_contract WHERE term_months IS NULL').fetchone()['n']
+    result['closed_with_nonzero_scenario_debt']=con.execute("SELECT count(*) n FROM credit.loan_contract WHERE replace(status_code,' ','') IN ('PIF','CANCLD') AND outstanding<>0").fetchone()['n']
     return result
 
 def main():

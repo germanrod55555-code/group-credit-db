@@ -1,0 +1,140 @@
+{
+  "B1_profit": {
+    "sql": "WITH top_profit AS (SELECT borrower_id,net_profit FROM private.financial_report WHERE fiscal_year=2025 ORDER BY net_profit DESC,borrower_id LIMIT 5)\n SELECT b.case_code,t.net_profit,d.debt FROM top_profit t JOIN credit.borrower b USING(borrower_id)\n LEFT JOIN LATERAL (SELECT sum(outstanding) debt FROM credit.loan_contract l WHERE l.borrower_id=t.borrower_id) d ON true",
+    "before": {
+      "median_ms": 1396.016,
+      "planning_ms": 0.379,
+      "shared_hit": 2784,
+      "shared_read": 89677,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 5,
+      "scans": [
+        "Index Scan borrower_pkey",
+        "Seq Scan"
+      ]
+    },
+    "after": {
+      "median_ms": 0.144,
+      "planning_ms": 0.336,
+      "shared_hit": 40,
+      "shared_read": 0,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 5,
+      "scans": [
+        "Index Only Scan idx_financial_year_profit",
+        "Index Only Scan idx_loan_borrower",
+        "Index Scan borrower_pkey"
+      ]
+    }
+  },
+  "B2_month": {
+    "sql": "SELECT status_code,count(*),sum(amount) FROM credit.loan_contract WHERE approval_date>=DATE '2015-01-01' AND approval_date<DATE '2015-02-01' GROUP BY status_code",
+    "before": {
+      "median_ms": 192.144,
+      "planning_ms": 0.092,
+      "shared_hit": 668,
+      "shared_read": 14034,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 4,
+      "scans": [
+        "Seq Scan"
+      ]
+    },
+    "after": {
+      "median_ms": 1.501,
+      "planning_ms": 0.111,
+      "shared_hit": 23,
+      "shared_read": 0,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 4,
+      "scans": [
+        "Index Only Scan idx_loan_approval"
+      ]
+    }
+  },
+  "B3_lender": {
+    "sql": "SELECT date_trunc('year',approval_date) yr,count(*),sum(amount) FROM credit.loan_contract WHERE lender_id=4 GROUP BY 1",
+    "before": {
+      "median_ms": 197.397,
+      "planning_ms": 0.084,
+      "shared_hit": 828,
+      "shared_read": 13874,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 20,
+      "scans": [
+        "Seq Scan"
+      ]
+    },
+    "after": {
+      "median_ms": 0.088,
+      "planning_ms": 0.069,
+      "shared_hit": 4,
+      "shared_read": 0,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 20,
+      "scans": [
+        "Index Only Scan idx_loan_lender"
+      ]
+    }
+  },
+  "B4_borrower": {
+    "sql": "SELECT borrower_id,sum(outstanding) FROM credit.loan_contract WHERE borrower_id=10000001 GROUP BY borrower_id",
+    "before": {
+      "median_ms": 152.6,
+      "planning_ms": 0.073,
+      "shared_hit": 924,
+      "shared_read": 13778,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 1,
+      "scans": [
+        "Seq Scan"
+      ]
+    },
+    "after": {
+      "median_ms": 0.026,
+      "planning_ms": 0.062,
+      "shared_hit": 4,
+      "shared_read": 0,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 1,
+      "scans": [
+        "Index Only Scan idx_loan_borrower"
+      ]
+    }
+  },
+  "B5_region": {
+    "sql": "SELECT industry_code,count(*) FROM credit.borrower WHERE region_code='WY' GROUP BY industry_code",
+    "before": {
+      "median_ms": 152.645,
+      "planning_ms": 0.077,
+      "shared_hit": 2572,
+      "shared_read": 7729,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 460,
+      "scans": [
+        "Seq Scan"
+      ]
+    },
+    "after": {
+      "median_ms": 0.633,
+      "planning_ms": 0.054,
+      "shared_hit": 13,
+      "shared_read": 0,
+      "temp_read": 0,
+      "temp_written": 0,
+      "rows": 460,
+      "scans": [
+        "Index Only Scan idx_borrower_region"
+      ]
+    }
+  }
+}

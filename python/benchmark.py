@@ -4,7 +4,7 @@ from pathlib import Path
 import psycopg
 ROOT=Path(__file__).resolve().parents[1]
 QUERIES={
- 'B1_profit':'''WITH top_profit AS (SELECT borrower_id,net_profit FROM private.financial_report WHERE fiscal_year=2025 ORDER BY net_profit DESC LIMIT 5)
+ 'B1_profit':'''WITH top_profit AS (SELECT borrower_id,net_profit FROM private.financial_report WHERE fiscal_year=2025 ORDER BY net_profit DESC,borrower_id LIMIT 5)
  SELECT b.case_code,t.net_profit,d.debt FROM top_profit t JOIN credit.borrower b USING(borrower_id)
  LEFT JOIN LATERAL (SELECT sum(outstanding) debt FROM credit.loan_contract l WHERE l.borrower_id=t.borrower_id) d ON true''',
  'B2_month':"SELECT status_code,count(*),sum(amount) FROM credit.loan_contract WHERE approval_date>=DATE '2015-01-01' AND approval_date<DATE '2015-02-01' GROUP BY status_code",

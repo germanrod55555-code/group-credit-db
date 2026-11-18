@@ -1,0 +1,152 @@
+[
+  {
+    "queryid": -4671174175630428509,
+    "calls": 1,
+    "total_exec_time": 65281.8185,
+    "mean_exec_time": 65281.8185,
+    "rows": 2472168,
+    "shared_blks_hit": 27538213,
+    "shared_blks_read": 32554,
+    "query": "INSERT INTO private.financial_report(borrower_id,fiscal_year,revenue,net_profit)\n          SELECT id,extract($1 from approval_date)::int-$2,greatest(amount*$3,$4),round(greatest(amount*$5,$6)*$7,$8) FROM stage_loans\n          UNION ALL SELECT id,$9,greatest(amount*($10+id%$11),$12),round(greatest(amount*($13+id%$14),$15)*(id%$16-$17)/$18,$19) FROM "
+  },
+  {
+    "queryid": -3818530838777851475,
+    "calls": 1,
+    "total_exec_time": 56371.8787,
+    "mean_exec_time": 56371.8787,
+    "rows": 1236084,
+    "shared_blks_hit": 27480244,
+    "shared_blks_read": 13800,
+    "query": "INSERT INTO credit.loan_contract\n          SELECT s.id,s.id,l.lender_id,s.source_id,s.source_row,s.approval_date,s.amount,\n          CASE WHEN s.status IN ($1,$2) THEN $3 ELSE round(s.amount*($4+s.id%$5)/$6,$7) END,\n          s.term_months,s.status,$8 FROM stage_loans s JOIN credit.lender l ON l.name=s.lender"
+  },
+  {
+    "queryid": 8784073550571601788,
+    "calls": 1,
+    "total_exec_time": 45834.2296,
+    "mean_exec_time": 45834.2296,
+    "rows": 858257,
+    "shared_blks_hit": 19015443,
+    "shared_blks_read": 40686,
+    "query": "UPDATE credit.loan_contract SET outstanding=$1 WHERE replace(status_code,$2,$3) IN ($4,$5) AND outstanding<>$6"
+  },
+  {
+    "queryid": -2900728412447201929,
+    "calls": 1,
+    "total_exec_time": 44477.1189,
+    "mean_exec_time": 44477.1189,
+    "rows": 1236084,
+    "shared_blks_hit": 8,
+    "shared_blks_read": 0,
+    "query": "COPY stage_loans FROM STDIN"
+  },
+  {
+    "queryid": -2746625852685151974,
+    "calls": 1,
+    "total_exec_time": 35888.064999999995,
+    "mean_exec_time": 35888.064999999995,
+    "rows": 1236084,
+    "shared_blks_hit": 15123528,
+    "shared_blks_read": 2,
+    "query": "INSERT INTO credit.borrower SELECT id,$1||id,region,industry,$2 FROM stage_loans"
+  },
+  {
+    "queryid": -6414817383660773438,
+    "calls": 2,
+    "total_exec_time": 23803.6963,
+    "mean_exec_time": 11901.84815,
+    "rows": 2472168,
+    "shared_blks_hit": 1773984,
+    "shared_blks_read": 110824,
+    "query": "REFRESH MATERIALIZED VIEW mart.mv_credit_risk"
+  },
+  {
+    "queryid": 7755464940806243574,
+    "calls": 16,
+    "total_exec_time": 13926.166600000002,
+    "mean_exec_time": 870.3854125000001,
+    "rows": 0,
+    "shared_blks_hit": 314052,
+    "shared_blks_read": 434666,
+    "query": "EXPLAIN (ANALYZE,BUFFERS,SETTINGS,FORMAT JSON) WITH top_profit AS (SELECT borrower_id,net_profit FROM private.financial_report WHERE fiscal_year=$1 ORDER BY net_profit DESC,borrower_id LIMIT $2)\n SELECT b.case_code,t.net_profit,d.debt FROM top_profit t JOIN credit.borrower b USING(borrower_id)\n LEFT JOIN LATERAL (SELECT sum(outstanding) debt FROM c"
+  },
+  {
+    "queryid": 3028758865556885605,
+    "calls": 1,
+    "total_exec_time": 13155.069,
+    "mean_exec_time": 13155.069,
+    "rows": 0,
+    "shared_blks_hit": 26471,
+    "shared_blks_read": 73662,
+    "query": "VACUUM FULL credit.loan_contract"
+  },
+  {
+    "queryid": -3015504488599672164,
+    "calls": 2,
+    "total_exec_time": 12138.348399999999,
+    "mean_exec_time": 6069.1741999999995,
+    "rows": 0,
+    "shared_blks_hit": 599,
+    "shared_blks_read": 37606,
+    "query": "CREATE INDEX idx_financial_year_profit ON private.financial_report(fiscal_year,net_profit DESC,borrower_id) INCLUDE(revenue)"
+  },
+  {
+    "queryid": 2303128300429769184,
+    "calls": 5,
+    "total_exec_time": 10368.644699999999,
+    "mean_exec_time": 2073.72894,
+    "rows": 0,
+    "shared_blks_hit": 191467,
+    "shared_blks_read": 244211,
+    "query": "VACUUM (ANALYZE)"
+  },
+  {
+    "queryid": 1230239490724260877,
+    "calls": 1,
+    "total_exec_time": 7505.5061,
+    "mean_exec_time": 7505.5061,
+    "rows": 2472168,
+    "shared_blks_hit": 291,
+    "shared_blks_read": 18640,
+    "query": "COPY private.financial_report (report_id, borrower_id, fiscal_year, revenue, net_profit, synthetic) TO stdout"
+  },
+  {
+    "queryid": -1867337955638119735,
+    "calls": 209,
+    "total_exec_time": 6952.703100000001,
+    "mean_exec_time": 33.266522009569385,
+    "rows": 2076084,
+    "shared_blks_hit": 1925312,
+    "shared_blks_read": 26594,
+    "query": "FETCH FORWARD 10000 FROM \"risk_export\""
+  },
+  {
+    "queryid": -1884646615243279100,
+    "calls": 1,
+    "total_exec_time": 6676.0766,
+    "mean_exec_time": 6676.0766,
+    "rows": 5,
+    "shared_blks_hit": 23,
+    "shared_blks_read": 1,
+    "query": "INSERT INTO credit.loan_status SELECT DISTINCT status FROM stage_loans"
+  },
+  {
+    "queryid": -209089581898468557,
+    "calls": 2,
+    "total_exec_time": 5189.7071,
+    "mean_exec_time": 2594.85355,
+    "rows": 0,
+    "shared_blks_hit": 16524,
+    "shared_blks_read": 13586,
+    "query": "CREATE INDEX idx_loan_lender ON credit.loan_contract(lender_id,approval_date) INCLUDE(amount)"
+  },
+  {
+    "queryid": -6029803947593693082,
+    "calls": 1,
+    "total_exec_time": 4962.6836,
+    "mean_exec_time": 4962.6836,
+    "rows": 1236084,
+    "shared_blks_hit": 15119,
+    "shared_blks_read": 0,
+    "query": "COPY credit.loan_contract (loan_id, borrower_id, lender_id, source_id, source_row, approval_date, amount, outstanding, term_months, status_code, scenario_fields) TO stdout"
+  }
+]

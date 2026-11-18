@@ -1,0 +1,107 @@
+[
+  {
+    "schema": "audit",
+    "relname": "audit_log",
+    "heap_bytes": 8192,
+    "index_bytes": 16384,
+    "total_bytes": 49152
+  },
+  {
+    "schema": "credit",
+    "relname": "borrower",
+    "heap_bytes": 84385792,
+    "index_bytes": 105799680,
+    "total_bytes": 190242816
+  },
+  {
+    "schema": "credit",
+    "relname": "industry",
+    "heap_bytes": 114688,
+    "index_bytes": 57344,
+    "total_bytes": 212992
+  },
+  {
+    "schema": "credit",
+    "relname": "lender",
+    "heap_bytes": 286720,
+    "index_bytes": 434176,
+    "total_bytes": 761856
+  },
+  {
+    "schema": "credit",
+    "relname": "load_run",
+    "heap_bytes": 8192,
+    "index_bytes": 16384,
+    "total_bytes": 65536
+  },
+  {
+    "schema": "credit",
+    "relname": "loan_contract",
+    "heap_bytes": 120438784,
+    "index_bytes": 200269824,
+    "total_bytes": 320774144
+  },
+  {
+    "schema": "credit",
+    "relname": "loan_status",
+    "heap_bytes": 8192,
+    "index_bytes": 16384,
+    "total_bytes": 65536
+  },
+  {
+    "schema": "credit",
+    "relname": "region",
+    "heap_bytes": 8192,
+    "index_bytes": 16384,
+    "total_bytes": 65536
+  },
+  {
+    "schema": "credit",
+    "relname": "source_file",
+    "heap_bytes": 8192,
+    "index_bytes": 49152,
+    "total_bytes": 98304
+  },
+  {
+    "schema": "mart",
+    "relname": "mv_credit_risk",
+    "heap_bytes": 105807872,
+    "index_bytes": 27787264,
+    "total_bytes": 133660672
+  },
+  {
+    "schema": "private",
+    "relname": "collateral",
+    "heap_bytes": 7012352,
+    "index_bytes": 2785280,
+    "total_bytes": 9838592
+  },
+  {
+    "schema": "private",
+    "relname": "financial_report",
+    "heap_bytes": 155082752,
+    "index_bytes": 286097408,
+    "total_bytes": 441245696
+  },
+  {
+    "schema": "private",
+    "relname": "guarantee",
+    "heap_bytes": 57344,
+    "index_bytes": 49152,
+    "total_bytes": 139264
+  },
+  {
+    "schema": "private",
+    "relname": "guarantor",
+    "heap_bytes": 122880,
+    "index_bytes": 106496,
+    "total_bytes": 270336
+  },
+  {
+    "schema": "private",
+    "relname": "loan_collateral",
+    "heap_bytes": 6463488,
+    "index_bytes": 6701056,
+    "total_bytes": 13197312
+  }
+]

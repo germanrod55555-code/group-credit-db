@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-18",
+  "documents": [
+    {
+      "file": "report.pdf",
+      "bytes": 124987,
+      "sha256": "53afa752c85fc8b89053b5043b0efcedc5f2ccb4549626846275c0d0f4c469cc",
+      "pages": 15
+    },
+    {
+      "file": "defense/Презентация. Базы данных. D18-25.pdf",
+      "bytes": 304441,
+      "sha256": "7495f77549edf7d563ed41e477642ee8233821701850932969754d388f84ef23",
+      "pages": 12
+    },
+    {
+      "file": "defense/Текст выступления и вопросы.pdf",
+      "bytes": 109075,
+      "sha256": "f3c3bba9b6ba3f29b4681e7bc04f983b5971f1acb22a4f941e6c395c578dcbab",
+      "pages": 7
+    },
+    {
+      "file": "defense/Презентация. Базы данных. D18-25.pptx",
+      "bytes": 63585,
+      "sha256": "457402e918a8469acbb6a8ac293740978736c7212eca99538842a62d27088b3a"
+    }
+  ],
+  "visual_review": "All 12 presentation PDF pages, all 15 report pages, all 7 speech/Q&A pages; changed pages reviewed again after layout and data fixes. ER and data-flow diagrams reviewed.",
+  "pptx_package_validation": "passed; 12 slides; notes checked",
+  "database_tests": {
+    "original": 23,
+    "restored": 23
+  },
+  "full_csv_export_rows": 1236084,
+  "demo_menu": "All seven actions and exit passed; launch and shutdown passed",
+  "source_status_regression": "Paid-in-full P I F handled; closed loans have zero scenario debt",
+  "known_gaps": [
+    "Missing course appendix texts",
+    "GitHub publication deferred",
+    "Personal contributions and commits of Igor/Pavel pending",
+    "Benchmark is warmed; OS cache was not flushed"
+  ]
+}

@@ -6,6 +6,11 @@ from decimal import Decimal
 import psycopg
 ROOT=Path(__file__).resolve().parents[1]
 def money(s):return Decimal((s or '0').replace(',','').replace('$',''))
+def integer(s):
+    if not s.strip():return None
+    value=Decimal(s)
+    if value!=value.to_integral_value():raise ValueError('Non-integer term in source')
+    return int(value)
 def read_rows(manifest):
     for source in manifest:
         path=ROOT/'data/raw'/source['filename']
@@ -21,7 +26,7 @@ def read_rows(manifest):
                 d=datetime.strptime(date_text,'%Y-%m-%d' if '-' in date_text else '%m/%d/%Y').date()
                 yield (key,sid,n,row['BorrState'].strip() or 'UNKNOWN',row['NaicsCode'].strip() or 'UNKNOWN',
                     row['NaicsDescription'].strip() or 'Не указана',row['BankName'].strip() or 'UNKNOWN',d,
-                    money(row['GrossApproval']),int(row['TermInMonths']) if row['TermInMonths'].strip() else None,
+                    money(row['GrossApproval']),integer(row['TermInMonths']),
                     row['LoanStatus'].strip() or 'UNKNOWN')
         if count!=source['row_count']:raise ValueError('Source row count mismatch')
 
@@ -61,7 +66,7 @@ def load(dsn):
           UNION ALL SELECT id,2025,greatest(amount*(1+id%6),1000),round(greatest(amount*(1+id%6),1000)*(id%31-5)/100.0,2) FROM stage_loans''')
         con.execute('''INSERT INTO credit.loan_contract
           SELECT s.id,s.id,l.lender_id,s.source_id,s.source_row,s.approval_date,s.amount,
-          CASE WHEN s.status IN ('PIF','CANCLD') THEN 0 ELSE round(s.amount*(1+s.id%8)/10.0,2) END,
+          CASE WHEN replace(s.status,' ','') IN ('PIF','CANCLD') THEN 0 ELSE round(s.amount*(1+s.id%8)/10.0,2) END,
           s.term_months,s.status,true FROM stage_loans s JOIN credit.lender l ON l.name=s.lender''')
         con.execute("INSERT INTO private.collateral SELECT id,CASE id%3 WHEN 0 THEN 'equipment' WHEN 1 THEN 'property' ELSE 'inventory' END,round(amount*(id%13)/10.0,2),true FROM stage_loans WHERE id%10=0")
         con.execute('INSERT INTO private.loan_collateral SELECT collateral_id,collateral_id,appraised_value FROM private.collateral')

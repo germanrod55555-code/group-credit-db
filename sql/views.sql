@@ -8,7 +8,7 @@ SELECT b.borrower_id,b.case_code,b.region_code,b.industry_code,
  true AS scenario_result
 FROM credit.borrower b
 LEFT JOIN private.financial_report f ON f.borrower_id=b.borrower_id AND f.fiscal_year=2025
-LEFT JOIN (SELECT borrower_id,sum(outstanding) debt FROM credit.loan_contract GROUP BY borrower_id) d USING(borrower_id);
+LEFT JOIN (SELECT borrower_id,sum(outstanding) debt FROM credit.loan_contract GROUP BY borrower_id) d ON d.borrower_id=b.borrower_id;
 
 CREATE MATERIALIZED VIEW mart.mv_credit_risk AS SELECT * FROM mart.v_borrower_summary WITH NO DATA;
 CREATE UNIQUE INDEX mv_credit_risk_pk ON mart.mv_credit_risk(borrower_id);

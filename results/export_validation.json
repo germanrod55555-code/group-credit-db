@@ -1,0 +1,20 @@
+{
+  "rows": 1236084,
+  "bytes": 89892523,
+  "sha256": "9b02df9303e8bb0529fc7a0a85b91b9fc738fdcfbc3ad10d854e9aad799d82b8",
+  "columns": [
+    "borrower_id",
+    "case_code",
+    "region_code",
+    "industry_code",
+    "fiscal_year",
+    "revenue",
+    "net_profit",
+    "debt",
+    "risk_level",
+    "scenario_result"
+  ],
+  "method": "db_access.py export; named cursor batches of 10000 -> pandas -> CSV",
+  "packaged_sample_rows": 20,
+  "full_csv_in_archive": false
+}

@@ -1,0 +1,7 @@
+{
+  "server": "PostgreSQL 16.13, compiled by Visual C++ build 1944, 64-bit",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "source_rows": 1236084,
+  "shared_buffers": "256MB",
+  "method": "one warmup + three measured runs; warm/steady cache, not cold; JIT off, parallel 0; same data and PK/UNIQUE indexes"
+}

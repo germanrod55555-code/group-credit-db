@@ -1,0 +1,35 @@
+{
+  "audit_id": 17,
+  "event_at": "2026-11-18 14:15:39.597579+03:00",
+  "session_actor": "postgres",
+  "effective_role": "credit_operator",
+  "table_name": "credit.loan_contract",
+  "operation": "UPDATE",
+  "old_data": {
+    "amount": 35000.0,
+    "loan_id": 10000001,
+    "lender_id": 623,
+    "source_id": 1,
+    "source_row": 1,
+    "borrower_id": 10000001,
+    "outstanding": 0.0,
+    "status_code": "P I F",
+    "term_months": 120,
+    "approval_date": "1999-10-01",
+    "scenario_fields": true
+  },
+  "new_data": {
+    "amount": 35000.0,
+    "loan_id": 10000001,
+    "lender_id": 623,
+    "source_id": 1,
+    "source_row": 1,
+    "borrower_id": 10000001,
+    "outstanding": 1.0,
+    "status_code": "P I F",
+    "term_months": 120,
+    "approval_date": "1999-10-01",
+    "scenario_fields": true
+  },
+  "txid": 1228
+}

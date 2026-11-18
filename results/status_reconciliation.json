@@ -1,0 +1,7 @@
+{
+  "reason": "SBA paid-in-full status is P I F; strip internal spaces only for scenario-debt rule, preserve the original status code",
+  "corrected_rows": 858257,
+  "source_rows_changed": false,
+  "operational_triggers_reenabled": true,
+  "mv_refreshed": true
+}

@@ -1,0 +1,587 @@
+{
+  "Q1": [
+    {
+      "case_code": "CASE-20081117",
+      "net_profit": "7500000.00",
+      "debt": "0.00"
+    },
+    {
+      "case_code": "CASE-20266187",
+      "net_profit": "7500000.00",
+      "debt": "0.00"
+    },
+    {
+      "case_code": "CASE-20275301",
+      "net_profit": "7500000.00",
+      "debt": "0.00"
+    },
+    {
+      "case_code": "CASE-20315105",
+      "net_profit": "7500000.00",
+      "debt": "1000000.00"
+    },
+    {
+      "case_code": "CASE-20389133",
+      "net_profit": "7500000.00",
+      "debt": "0.00"
+    }
+  ],
+  "Q2": [
+    {
+      "loan_id": 10000001,
+      "amount": "35000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000002,
+      "amount": "77000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000003,
+      "amount": "460400.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000004,
+      "amount": "250000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000005,
+      "amount": "50000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000006,
+      "amount": "125000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000007,
+      "amount": "10000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000008,
+      "amount": "200000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000009,
+      "amount": "225000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000010,
+      "amount": "49000.00",
+      "coverage": "34300.00"
+    },
+    {
+      "loan_id": 10000011,
+      "amount": "235000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000012,
+      "amount": "51000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000013,
+      "amount": "100000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000014,
+      "amount": "280000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000015,
+      "amount": "386000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000016,
+      "amount": "1000000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000017,
+      "amount": "144000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000018,
+      "amount": "175000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000019,
+      "amount": "500000.00",
+      "coverage": "0"
+    },
+    {
+      "loan_id": 10000020,
+      "amount": "111500.00",
+      "coverage": "44600.00"
+    }
+  ],
+  "Q3": [
+    {
+      "status_code": "EXEMPT",
+      "count": 170,
+      "sum": "132347100.00"
+    },
+    {
+      "status_code": "P I F",
+      "count": 3408,
+      "sum": "1133153500.00"
+    },
+    {
+      "status_code": "CANCLD",
+      "count": 465,
+      "sum": "160984000.00"
+    },
+    {
+      "status_code": "CHGOFF",
+      "count": 229,
+      "sum": "47693400.00"
+    }
+  ],
+  "Q4": [
+    {
+      "yr": "2004-01-01 00:00:00+03:00",
+      "count": 3,
+      "sum": "438500.00"
+    },
+    {
+      "yr": "2001-01-01 00:00:00+03:00",
+      "count": 5,
+      "sum": "529600.00"
+    },
+    {
+      "yr": "2010-01-01 00:00:00+03:00",
+      "count": 5,
+      "sum": "1180000.00"
+    },
+    {
+      "yr": "2012-01-01 00:00:00+04:00",
+      "count": 2,
+      "sum": "122600.00"
+    },
+    {
+      "yr": "2014-01-01 00:00:00+04:00",
+      "count": 11,
+      "sum": "930100.00"
+    },
+    {
+      "yr": "2017-01-01 00:00:00+03:00",
+      "count": 9,
+      "sum": "2650500.00"
+    },
+    {
+      "yr": "2013-01-01 00:00:00+04:00",
+      "count": 6,
+      "sum": "469000.00"
+    },
+    {
+      "yr": "2018-01-01 00:00:00+03:00",
+      "count": 8,
+      "sum": "576100.00"
+    },
+    {
+      "yr": "2009-01-01 00:00:00+03:00",
+      "count": 5,
+      "sum": "1818000.00"
+    },
+    {
+      "yr": "2019-01-01 00:00:00+03:00",
+      "count": 6,
+      "sum": "460500.00"
+    },
+    {
+      "yr": "2002-01-01 00:00:00+03:00",
+      "count": 1,
+      "sum": "51300.00"
+    },
+    {
+      "yr": "2015-01-01 00:00:00+03:00",
+      "count": 11,
+      "sum": "2750000.00"
+    },
+    {
+      "yr": "2006-01-01 00:00:00+03:00",
+      "count": 3,
+      "sum": "1264600.00"
+    },
+    {
+      "yr": "2005-01-01 00:00:00+03:00",
+      "count": 2,
+      "sum": "997700.00"
+    },
+    {
+      "yr": "2007-01-01 00:00:00+03:00",
+      "count": 4,
+      "sum": "1013400.00"
+    },
+    {
+      "yr": "2008-01-01 00:00:00+03:00",
+      "count": 5,
+      "sum": "795500.00"
+    },
+    {
+      "yr": "1999-01-01 00:00:00+03:00",
+      "count": 1,
+      "sum": "57500.00"
+    },
+    {
+      "yr": "2003-01-01 00:00:00+03:00",
+      "count": 6,
+      "sum": "551500.00"
+    },
+    {
+      "yr": "2011-01-01 00:00:00+03:00",
+      "count": 1,
+      "sum": "71000.00"
+    },
+    {
+      "yr": "2016-01-01 00:00:00+03:00",
+      "count": 8,
+      "sum": "525000.00"
+    }
+  ],
+  "Q5": [
+    {
+      "borrower_id": 10000001,
+      "sum": "0.00"
+    }
+  ],
+  "Q6": [
+    {
+      "industry_code": "454390",
+      "count": 9
+    },
+    {
+      "industry_code": "541191",
+      "count": 3
+    },
+    {
+      "industry_code": "424510",
+      "count": 3
+    },
+    {
+      "industry_code": "517910",
+      "count": 1
+    },
+    {
+      "industry_code": "339942",
+      "count": 2
+    },
+    {
+      "industry_code": "722330",
+      "count": 6
+    },
+    {
+      "industry_code": "722320",
+      "count": 2
+    },
+    {
+      "industry_code": "721199",
+      "count": 2
+    },
+    {
+      "industry_code": "561439",
+      "count": 4
+    },
+    {
+      "industry_code": "237130",
+      "count": 2
+    },
+    {
+      "industry_code": "326199",
+      "count": 3
+    },
+    {
+      "industry_code": "424490",
+      "count": 2
+    },
+    {
+      "industry_code": "311812",
+      "count": 4
+    },
+    {
+      "industry_code": "446110",
+      "count": 20
+    },
+    {
+      "industry_code": "492110",
+      "count": 1
+    },
+    {
+      "industry_code": "541810",
+      "count": 6
+    },
+    {
+      "industry_code": "621498",
+      "count": 3
+    },
+    {
+      "industry_code": "519190",
+      "count": 1
+    },
+    {
+      "industry_code": "335311",
+      "count": 1
+    },
+    {
+      "industry_code": "448310",
+      "count": 1
+    }
+  ],
+  "Q7": [
+    {
+      "code": "721110",
+      "description": "Hotels (except Casino Hotels) and Motels",
+      "contracts": 14814,
+      "approved": "21446556822.00"
+    },
+    {
+      "code": "447110",
+      "description": "Gasoline Stations with Convenience Stores",
+      "contracts": 17149,
+      "approved": "12229482547.00"
+    },
+    {
+      "code": "722110",
+      "description": "Full-Service Restaurants",
+      "contracts": 42586,
+      "approved": "10111675478.31"
+    },
+    {
+      "code": "621210",
+      "description": "Offices of Dentists",
+      "contracts": 19936,
+      "approved": "9018332888.00"
+    },
+    {
+      "code": "722511",
+      "description": "Full-Service Restaurants",
+      "contracts": 20955,
+      "approved": "8160117100.00"
+    },
+    {
+      "code": "624410",
+      "description": "Child Care Services",
+      "contracts": 14689,
+      "approved": "6925763019.00"
+    },
+    {
+      "code": "722211",
+      "description": "Limited-Service Restaurants",
+      "contracts": 31811,
+      "approved": "6698381619.52"
+    },
+    {
+      "code": "541940",
+      "description": "Veterinary Services",
+      "contracts": 8587,
+      "approved": "5367989566.00"
+    },
+    {
+      "code": "621111",
+      "description": "Offices of Physicians (except Mental Health Specialists)",
+      "contracts": 15828,
+      "approved": "5232332270.00"
+    },
+    {
+      "code": "722513",
+      "description": "Limited-Service Restaurants",
+      "contracts": 13946,
+      "approved": "4942797900.00"
+    },
+    {
+      "code": "445310",
+      "description": "\"Beer, Wine, and Liquor Stores\"",
+      "contracts": 12929,
+      "approved": "4711740293.00"
+    },
+    {
+      "code": "UNKNOWN",
+      "description": "Не указана",
+      "contracts": 19779,
+      "approved": "4628912080.00"
+    },
+    {
+      "code": "811192",
+      "description": "Car Washes",
+      "contracts": 5976,
+      "approved": "4582240413.74"
+    },
+    {
+      "code": "713940",
+      "description": "Fitness and Recreational Sports Centers",
+      "contracts": 14654,
+      "approved": "4120589971.00"
+    },
+    {
+      "code": "445110",
+      "description": "Supermarkets and Other Grocery (except Convenience) Stores",
+      "contracts": 10441,
+      "approved": "3879848154.00"
+    },
+    {
+      "code": "811111",
+      "description": "General Automotive Repair",
+      "contracts": 19332,
+      "approved": "3764460013.00"
+    },
+    {
+      "code": "112320",
+      "description": "Broilers and Other Meat Type",
+      "contracts": 4838,
+      "approved": "3692518184.00"
+    },
+    {
+      "code": "238990",
+      "description": "All Other Specialty Trade Contractors",
+      "contracts": 14095,
+      "approved": "2776054290.00"
+    },
+    {
+      "code": "446110",
+      "description": "Pharmacies and Drug Stores",
+      "contracts": 5670,
+      "approved": "2747965008.00"
+    },
+    {
+      "code": "812320",
+      "description": "Drycleaning and Laundry Services (except Coin-Operated)",
+      "contracts": 9852,
+      "approved": "2361363214.00"
+    }
+  ],
+  "Q8": [
+    {
+      "yr": 1999,
+      "lender_id": 525,
+      "total": "161750414.00",
+      "rank_in_year": 1
+    },
+    {
+      "yr": 1999,
+      "lender_id": 69,
+      "total": "125847800.00",
+      "rank_in_year": 2
+    },
+    {
+      "yr": 1999,
+      "lender_id": 2732,
+      "total": "125435733.00",
+      "rank_in_year": 3
+    },
+    {
+      "yr": 1999,
+      "lender_id": 3753,
+      "total": "115315590.00",
+      "rank_in_year": 4
+    },
+    {
+      "yr": 1999,
+      "lender_id": 4106,
+      "total": "111660400.00",
+      "rank_in_year": 5
+    },
+    {
+      "yr": 1999,
+      "lender_id": 1189,
+      "total": "98458300.00",
+      "rank_in_year": 6
+    },
+    {
+      "yr": 1999,
+      "lender_id": 737,
+      "total": "91157900.00",
+      "rank_in_year": 7
+    },
+    {
+      "yr": 1999,
+      "lender_id": 4224,
+      "total": "88662167.00",
+      "rank_in_year": 8
+    },
+    {
+      "yr": 1999,
+      "lender_id": 3535,
+      "total": "83334120.00",
+      "rank_in_year": 9
+    },
+    {
+      "yr": 1999,
+      "lender_id": 2473,
+      "total": "80933950.00",
+      "rank_in_year": 10
+    },
+    {
+      "yr": 1999,
+      "lender_id": 2554,
+      "total": "72562400.00",
+      "rank_in_year": 11
+    },
+    {
+      "yr": 1999,
+      "lender_id": 1220,
+      "total": "57569968.00",
+      "rank_in_year": 12
+    },
+    {
+      "yr": 1999,
+      "lender_id": 2907,
+      "total": "48091107.00",
+      "rank_in_year": 13
+    },
+    {
+      "yr": 1999,
+      "lender_id": 3895,
+      "total": "45760100.00",
+      "rank_in_year": 14
+    },
+    {
+      "yr": 1999,
+      "lender_id": 4389,
+      "total": "44872300.00",
+      "rank_in_year": 15
+    },
+    {
+      "yr": 1999,
+      "lender_id": 1342,
+      "total": "44055319.00",
+      "rank_in_year": 16
+    },
+    {
+      "yr": 1999,
+      "lender_id": 1997,
+      "total": "39706200.00",
+      "rank_in_year": 17
+    },
+    {
+      "yr": 1999,
+      "lender_id": 888,
+      "total": "34753283.00",
+      "rank_in_year": 18
+    },
+    {
+      "yr": 1999,
+      "lender_id": 1011,
+      "total": "34610700.00",
+      "rank_in_year": 19
+    },
+    {
+      "yr": 1999,
+      "lender_id": 3160,
+      "total": "30727000.00",
+      "rank_in_year": 20
+    }
+  ]
+}

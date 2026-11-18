@@ -1,0 +1,57 @@
+[
+  {
+    "child": "credit.borrower",
+    "parent": "credit.industry",
+    "definition": "FOREIGN KEY (industry_code) REFERENCES credit.industry(code)"
+  },
+  {
+    "child": "credit.borrower",
+    "parent": "credit.region",
+    "definition": "FOREIGN KEY (region_code) REFERENCES credit.region(code)"
+  },
+  {
+    "child": "credit.loan_contract",
+    "parent": "credit.borrower",
+    "definition": "FOREIGN KEY (borrower_id) REFERENCES credit.borrower(borrower_id)"
+  },
+  {
+    "child": "credit.loan_contract",
+    "parent": "credit.lender",
+    "definition": "FOREIGN KEY (lender_id) REFERENCES credit.lender(lender_id)"
+  },
+  {
+    "child": "credit.loan_contract",
+    "parent": "credit.loan_status",
+    "definition": "FOREIGN KEY (status_code) REFERENCES credit.loan_status(status_code)"
+  },
+  {
+    "child": "credit.loan_contract",
+    "parent": "credit.source_file",
+    "definition": "FOREIGN KEY (source_id) REFERENCES credit.source_file(source_id)"
+  },
+  {
+    "child": "private.financial_report",
+    "parent": "credit.borrower",
+    "definition": "FOREIGN KEY (borrower_id) REFERENCES credit.borrower(borrower_id)"
+  },
+  {
+    "child": "private.guarantee",
+    "parent": "credit.loan_contract",
+    "definition": "FOREIGN KEY (loan_id) REFERENCES credit.loan_contract(loan_id)"
+  },
+  {
+    "child": "private.guarantee",
+    "parent": "private.guarantor",
+    "definition": "FOREIGN KEY (guarantor_id) REFERENCES private.guarantor(guarantor_id)"
+  },
+  {
+    "child": "private.loan_collateral",
+    "parent": "credit.loan_contract",
+    "definition": "FOREIGN KEY (loan_id) REFERENCES credit.loan_contract(loan_id)"
+  },
+  {
+    "child": "private.loan_collateral",
+    "parent": "private.collateral",
+    "definition": "FOREIGN KEY (collateral_id) REFERENCES private.collateral(collateral_id)"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "status": "restored_and_counts_verified",
+  "tables_checked": 14,
+  "materialized_rows": 1236084,
+  "dump_bytes": 49293775,
+  "sha256": "bdd23f1df4ce2ec978c48c8ffc91a3804e89979ce0530f38af5ea288f0f84617",
+  "restore_database": "credit_lab_restored",
+  "roles_reapplied": true
+}

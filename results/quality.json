@@ -1,0 +1,21 @@
+{
+  "credit.borrower": {
+    "rows": 1236084,
+    "null_keys": 0,
+    "duplicate_keys": 0
+  },
+  "credit.loan_contract": {
+    "rows": 1236084,
+    "null_keys": 0,
+    "duplicate_keys": 0
+  },
+  "private.financial_report": {
+    "rows": 2472168,
+    "null_keys": 0,
+    "duplicate_keys": 0
+  },
+  "missing_reports": 0,
+  "limit_violations": 0,
+  "optional_missing_terms": 0,
+  "closed_with_nonzero_scenario_debt": 0
+}

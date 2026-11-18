@@ -1,0 +1,28 @@
+test_admin_audit_update_denied (__main__.DatabaseTests.test_admin_audit_update_denied) ... ok
+test_analyst_mart_read (__main__.DatabaseTests.test_analyst_mart_read) ... ok
+test_analyst_private_denied (__main__.DatabaseTests.test_analyst_private_denied) ... ok
+test_analyst_source_denied (__main__.DatabaseTests.test_analyst_source_denied) ... ok
+test_audit_contains_before_after_actor (__main__.DatabaseTests.test_audit_contains_before_after_actor) ... ok
+test_balance_rollback (__main__.DatabaseTests.test_balance_rollback) ... ok
+test_balance_transaction (__main__.DatabaseTests.test_balance_transaction) ... ok
+test_check_contact_domain (__main__.DatabaseTests.test_check_contact_domain) ... ok
+test_committee_update_denied (__main__.DatabaseTests.test_committee_update_denied) ... ok
+test_fk (__main__.DatabaseTests.test_fk) ... ok
+test_function_thresholds (__main__.DatabaseTests.test_function_thresholds) ... ok
+test_function_unknown (__main__.DatabaseTests.test_function_unknown) ... ok
+test_loan_limit_accepts_boundary (__main__.DatabaseTests.test_loan_limit_accepts_boundary) ... ok
+test_loan_limit_rejects (__main__.DatabaseTests.test_loan_limit_rejects) ... ok
+test_minimum_tables (__main__.DatabaseTests.test_minimum_tables) ... ok
+test_missing_lookup (__main__.DatabaseTests.test_missing_lookup) ... ok
+test_missing_previous_report (__main__.DatabaseTests.test_missing_previous_report) ... ok
+test_operator_delete_denied (__main__.DatabaseTests.test_operator_delete_denied) ... ok
+test_parameterized_lookup (__main__.DatabaseTests.test_parameterized_lookup) ... ok
+test_report_reduction_rejected (__main__.DatabaseTests.test_report_reduction_rejected) ... ok
+test_snapshot_has_no_contacts (__main__.DatabaseTests.test_snapshot_has_no_contacts) ... ok
+test_source_million (__main__.DatabaseTests.test_source_million) ... ok
+test_unique (__main__.DatabaseTests.test_unique) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.875s
+
+OK

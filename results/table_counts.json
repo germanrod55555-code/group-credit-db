@@ -1,0 +1,16 @@
+{
+  "audit.audit_log": 0,
+  "credit.borrower": 1236084,
+  "credit.industry": 1401,
+  "credit.lender": 4419,
+  "credit.load_run": 1,
+  "credit.loan_contract": 1236084,
+  "credit.loan_status": 5,
+  "credit.region": 60,
+  "credit.source_file": 2,
+  "private.collateral": 123608,
+  "private.financial_report": 2472168,
+  "private.guarantee": 1000,
+  "private.guarantor": 1000,
+  "private.loan_collateral": 123608
+}
